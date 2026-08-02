@@ -1,0 +1,14 @@
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        # Two pointers (left and right)
+        # Update two pointers based on the relationship between sum and target.
+        # Time: O(n) as each number is visited at most once; space: O(1)
+        left, right = 0, len(numbers) - 1
+        while left < right:
+            curr = numbers[left] + numbers[right]
+            if curr == target:
+                return [left + 1, right + 1]
+            elif curr > target:
+                right -= 1
+            else:
+                left += 1
